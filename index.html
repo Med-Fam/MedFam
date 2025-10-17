@@ -291,352 +291,291 @@
             margin: 0 auto;
         }
 
-        /* ABOUT SECTION */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
+        /* BLOG SECTION */
+        .blog-section {
+            background-color: #f9f9f9;
         }
 
-        .about-description {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-
-        .about-stats {
+        .blog-header {
             display: flex;
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-item .stat-number {
-            font-size: 1.8rem;
-            color: var(--primary-brown);
-            font-weight: 700;
-        }
-
-        .stat-item .stat-label {
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        .about-image {
-            display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-        }
-
-        .image-placeholder {
-            width: 100%;
-            height: 300px;
-            background-color: var(--light-beige);
-            border-radius: 10px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: var(--primary-brown);
-            font-size: 1.2rem;
-        }
-
-        .image-placeholder i {
-            font-size: 4rem;
-            margin-bottom: 20px;
-        }
-
-        /* GOALS/PROGRAMS SECTION */
-        .goals-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .goal-card {
-            background-color: var(--white);
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            text-align: center;
-        }
-
-        .goal-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .goal-icon {
-            font-size: 2.5rem;
-            color: var(--primary-brown);
-            margin-bottom: 20px;
-        }
-
-        .goal-title {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: var(--primary-brown);
-        }
-
-        .goal-description {
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-
-        /* EVENTS SECTION */
-        .events-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .calendar-card, .past-events {
-            background-color: var(--white);
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-        }
-
-        .calendar-box {
-            padding: 40px;
-            border-radius: 10px;
-            border: 2px dashed var(--primary-brown);
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .calendar-box i {
-            font-size: 2.5rem;
-            color: var(--primary-brown);
-            margin-bottom: 15px;
-        }
-
-        .past-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            margin-bottom: 40px;
+            flex-wrap: wrap;
             gap: 20px;
-            margin-top: 20px;
         }
 
-        .event-item {
-            background-color: var(--light-beige);
-            border-radius: 8px;
-            padding: 20px;
-            transition: var(--transition);
-        }
-
-        .event-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .event-item h4 {
-            margin-bottom: 10px;
-            color: var(--primary-brown);
-        }
-
-        .event-item img {
-            width: 100%;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
-
-        .small {
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-
-        /* GET INVOLVED SECTION */
-        .involved-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .involved-card {
-            background-color: var(--white);
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-            text-align: center;
-            transition: var(--transition);
-        }
-
-        .involved-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .involved-card h3 {
-            margin-bottom: 15px;
-            color: var(--primary-brown);
-        }
-
-        .involved-card p {
-            margin-bottom: 20px;
-            color: var(--text-light);
-        }
-
-        /* PEOPLE SECTION */
-        .people-description {
-            max-width: 800px;
-            margin: 0 auto 40px;
-            text-align: center;
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .team-card {
-            background-color: var(--white);
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-            text-align: center;
-            transition: var(--transition);
-        }
-
-        .team-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .team-card img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
-            border: 3px solid var(--light-beige);
-        }
-
-        .team-card h4 {
-            margin-bottom: 10px;
-            color: var(--primary-brown);
-        }
-
-        .muted {
-            color: var(--text-light);
-            font-style: italic;
-        }
-
-        /* JOIN SECTION */
-        .cta-card {
-            background-color: var(--light-beige);
-            border-radius: 10px;
-            padding: 50px;
-            text-align: center;
-            box-shadow: var(--shadow);
-        }
-
-        .cta-card h2 {
-            margin-bottom: 20px;
-            color: var(--primary-brown);
-        }
-
-        .cta-card p {
-            margin-bottom: 30px;
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* CONTACT SECTION */
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
-
-        .contact-info {
+        .blog-search {
             display: flex;
-            flex-direction: column;
-            gap: 30px;
+            gap: 10px;
+            flex: 1;
+            max-width: 500px;
         }
 
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-        }
-
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background-color: var(--light-beige);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: var(--primary-brown);
-            font-size: 1.2rem;
-        }
-
-        .contact-details h4 {
-            margin-bottom: 5px;
-            color: var(--primary-brown);
-        }
-
-        .social-row {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-link {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            width: 40px;
-            height: 40px;
-            background-color: var(--light-beige);
-            border-radius: 50%;
-            color: var(--primary-brown);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .social-link:hover {
-            background-color: var(--primary-brown);
-            color: var(--white);
-            transform: translateY(-3px);
-        }
-
-        .contact-form {
-            background-color: var(--white);
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
+        .search-input {
+            flex: 1;
             padding: 12px 15px;
             border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: inherit;
+            border-radius: 30px;
             font-size: 1rem;
             transition: var(--transition);
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
+        .search-input:focus {
             outline: none;
             border-color: var(--primary-brown);
             box-shadow: 0 0 0 2px rgba(139, 69, 19, 0.2);
+        }
+
+        .search-btn {
+            background-color: var(--primary-brown);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .search-btn:hover {
+            background-color: #6b3710;
+        }
+
+        .blog-filters {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 16px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary-brown);
+            color: white;
+            border-color: var(--primary-brown);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .blog-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 20px;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .blog-category {
+            background-color: var(--light-beige);
+            color: var(--primary-brown);
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .blog-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary-brown);
+            line-height: 1.4;
+        }
+
+        .blog-excerpt {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .blog-read-more {
+            color: var(--primary-brown);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: var(--transition);
+        }
+
+        .blog-read-more:hover {
+            gap: 10px;
+        }
+
+        .blog-pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 40px;
+        }
+
+        .pagination-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: white;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .pagination-btn.active, .pagination-btn:hover {
+            background-color: var(--primary-brown);
+            color: white;
+            border-color: var(--primary-brown);
+        }
+
+        .pagination-ellipsis {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+        }
+
+        .blog-sidebar {
+            margin-top: 50px;
+        }
+
+        .sidebar-section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .sidebar-title {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--primary-brown);
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-beige);
+        }
+
+        .popular-posts {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .popular-post {
+            display: flex;
+            gap: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .popular-post:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .popular-post-img {
+            width: 80px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .popular-post-content h4 {
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+            line-height: 1.4;
+        }
+
+        .popular-post-date {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .categories-list {
+            list-style: none;
+        }
+
+        .category-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .category-item:last-child {
+            border-bottom: none;
+        }
+
+        .category-name {
+            color: var(--text-dark);
+        }
+
+        .category-count {
+            background-color: var(--light-beige);
+            color: var(--primary-brown);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .newsletter-input {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--primary-brown);
+        }
+
+        /* BLOG LAYOUT */
+        .blog-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
         }
 
         /* FOOTER */
@@ -688,9 +627,7 @@
 
         /* RESPONSIVE STYLES */
         @media (max-width: 992px) {
-            .about-content,
-            .events-grid,
-            .contact-content {
+            .blog-layout {
                 grid-template-columns: 1fr;
             }
             
@@ -752,6 +689,15 @@
                 font-size: 2rem;
             }
 
+            .blog-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .blog-search {
+                max-width: 100%;
+            }
+
             .footer-content {
                 flex-direction: column;
                 gap: 20px;
@@ -769,14 +715,8 @@
                 max-width: 250px;
             }
             
-            .about-stats {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .hero-stats {
-                flex-direction: column;
-                gap: 15px;
+            .blog-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -794,6 +734,7 @@
                 <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="#programs" class="nav-link">What We Do</a></li>
                 <li class="nav-item"><a href="#events" class="nav-link">Events</a></li>
+                <li class="nav-item"><a href="#blog" class="nav-link">Blog</a></li>
                 <li class="nav-item"><a href="#people" class="nav-link">Our People</a></li>
                 <li class="nav-item"><a href="#getinvolved" class="nav-link">Get Involved</a></li>
                 <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
@@ -817,7 +758,7 @@
             <div class="hero-buttons">
                 <a href="#join" class="btn btn-primary">Join Us</a>
                 <a href="#about" class="btn btn-secondary">Learn More</a>
-                <a href="#getinvolved" class="btn btn-secondary">Volunteer</a>
+                <a href="#blog" class="btn btn-secondary">Read Our Blog</a>
             </div>
 
             <div class="hero-stats">
@@ -837,262 +778,62 @@
         </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="section about">
+    <!-- BLOG SECTION -->
+    <section id="blog" class="section blog-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">About Med.Fam</h2>
-                <p class="section-subtitle">Fostering Unity, Knowledge, and Respect Across the Healthcare Spectrum</p>
+                <h2 class="section-title">Med.Fam Blog</h2>
+                <p class="section-subtitle">Insights, updates, and stories from our medical community</p>
             </div>
 
-            <div class="about-content">
-                <div class="about-text">
-                    <p class="about-description">
-                        <strong>Med.Fam</strong> (short for <em>Medical Family</em>) is a student-driven initiative founded by two passionate medical students and built on the values of inclusivity, collaboration, and service.
-                        What began as a platform for academic support and personal reflection has evolved into a dynamic, multidisciplinary community for future healthcare professionals.
-                    </p>
-                    <p class="about-description">
-                        We aim to reshape how healthcare students connect, learn and grow — not just within their fields, but across the wider healthcare ecosystem.
-                    </p>
-
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">2023</div>
-                            <div class="stat-label">Founded</div>
+            <div class="blog-layout">
+                <div class="blog-main">
+                    <div class="blog-header">
+                        <div class="blog-search">
+                            <input type="text" class="search-input" placeholder="Search articles...">
+                            <button class="search-btn"><i class="fas fa-search"></i></button>
                         </div>
-                        <div class="stat-item">
-                            <div class="stat-number">500+</div>
-                            <div class="stat-label">Students Reached</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">Global</div>
-                            <div class="stat-label">Student Network</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="about-image">
-                    <div class="image-placeholder">
-                        <i class="fas fa-users"></i>
-                        <p>United medical & healthcare students</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PROGRAMS -->
-    <section id="programs" class="section goals">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">What We Do</h2>
-                <p class="section-subtitle">Programs that empower learning, mentorship, and community impact</p>
-            </div>
-
-            <div class="goals-grid">
-                <div class="goal-card">
-                    <div class="goal-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-                    <h3 class="goal-title">Webinars & Expert Talks</h3>
-                    <p class="goal-description">High-impact educational sessions on academic success, clinical knowledge, and career planning. Past sessions include: Achieving Academic Excellence and Maximizing Your Education with Osmosis.</p>
-                </div>
-
-                <div class="goal-card">
-                    <div class="goal-icon"><i class="fas fa-hands-helping"></i></div>
-                    <h3 class="goal-title">Mentorship & Professional Development</h3>
-                    <p class="goal-description">CV guidance, internships & scholarship support, and one-on-one mentorship to boost career readiness.</p>
-                </div>
-
-                <div class="goal-card">
-                    <div class="goal-icon"><i class="fas fa-user-friends"></i></div>
-                    <h3 class="goal-title">Study Support & Peer Teaching</h3>
-                    <p class="goal-description">Peer tutoring and study circles for subjects like pharmacology, physiology, and biochemistry.</p>
-                </div>
-
-                <div class="goal-card">
-                    <div class="goal-icon"><i class="fas fa-bullhorn"></i></div>
-                    <h3 class="goal-title">Community & Awareness Campaigns</h3>
-                    <p class="goal-description">Observing global health days, community outreach, and student-led digital advocacy.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- EVENTS -->
-    <section id="events" class="section events">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Events</h2>
-                <p class="section-subtitle">Upcoming activities, past highlights, and opportunities to register</p>
-            </div>
-
-            <div class="events-grid">
-                <div class="calendar-card">
-                    <h3>Upcoming Events Calendar</h3>
-                    <p class="section-subtitle">(Placeholder) — embed your Google Calendar here when ready</p>
-                    <div class="calendar-placeholder">
-                        <div class="calendar-box">
-                            <i class="far fa-calendar-alt"></i>
-                            <p>Google Calendar Embed Placeholder</p>
+                        <div class="blog-filters">
+                            <button class="filter-btn active">All</button>
+                            <button class="filter-btn">Study Tips</button>
+                            <button class="filter-btn">Medical News</button>
+                            <button class="filter-btn">Student Stories</button>
+                            <button class="filter-btn">Career Advice</button>
                         </div>
                     </div>
 
-                    <a href="#register" class="btn btn-primary">Register for Upcoming Event</a>
-                </div>
-
-                <div class="past-events">
-                    <h3>Highlights from Past Events</h3>
-                    <div class="past-grid">
-                        <div class="event-item">
-                            <h4>Global hand washing day</h4>
-                            <img src="photo_2025-10-16_12-11-20.jpg" alt="Hand washing demonstration 1">
-                            <img src="photo_2025-10-16_12-11-25.jpg" alt="Hand washing demonstration 2">
-                            <h4>Achieving Academic Excellence</h4>
-                            <p class="small">Short recap: Practical study strategies and interactive Q&A. (Jul 2025)</p>
-                        </div>
-
-                        <div class="event-item">
-                            <img src="https://via.placeholder.com/320x200?text=Workshop+2" alt="Workshop 2">
-                            <h4>Peer Teaching Workshop</h4>
-                            <p class="small">Short recap: Small-group sessions focused on pharmacology practice questions. (Sep 2025)</p>
-                        </div>
-
-                        <div class="event-item">
-                            <img src="https://via.placeholder.com/320x200?text=Panel+Talk" alt="Panel Talk">
-                            <h4>Interdisciplinary Panel</h4>
-                            <p class="small">Short recap: Discussion between medical, nursing, and public health students. (Aug 2025)</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- GET INVOLVED -->
-    <section id="getinvolved" class="section join-us">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Get Involved</h2>
-                <p class="section-subtitle">Join, Volunteer, or Collaborate — there's a way for everyone to help</p>
-            </div>
-
-            <div class="involved-grid">
-                <div class="involved-card">
-                    <h3>Join Us</h3>
-                    <p>Become a member of Med.Fam and access webinars, study resources, and mentorship.</p>
-                    <a href="#join" class="btn btn-primary">Join Us</a>
-                </div>
-
-                <div class="involved-card">
-                    <h3>Volunteer</h3>
-                    <p>Support events, tutoring, and outreach. Volunteer roles are flexible and remote-friendly.</p>
-                    <a href="#volunteer" class="btn btn-secondary">Volunteer</a>
-                </div>
-
-                <div class="involved-card">
-                    <h3>Collaborate</h3>
-                    <p>Partnership & sponsorship enquiries — work with Med.Fam on events, resources, or campaigns.</p>
-                    <a href="#collaborate" class="btn btn-secondary">Collaborate</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- OUR PEOPLE -->
-    <section id="people" class="section people">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our People</h2>
-                <p class="section-subtitle">At Med.Fam, our strength lies in our people.</p>
-            </div>
-
-            <p class="people-description">We are a diverse community of passionate medical students, mentors, and volunteers united by a shared vision to learn, serve, and grow together. Our members bring dedication, creativity, and compassion to every project, making Med.Fam a supportive family committed to positive change in healthcare and beyond.</p>
-
-            <div class="team-grid">
-                <div class="team-card">
-                    <img src="https://ui-avatars.com/api/?name=Emilia+Kelvin&background=F5F5DC&color=8B4513&size=256" alt="Emilia Kelvin">
-                    <h4>Emilia Kelvin</h4>
-                    <p class="muted">Co-Founder & President</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="https://ui-avatars.com/api/?name=Esther+Ojukwu&background=F5F5DC&color=8B4513&size=256" alt="Esther Ojukwu">
-                    <h4>Esther Ojukwu</h4>
-                    <p class="muted">Co-Founder & Vice President</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- JOIN -->
-    <section id="join" class="section join-us">
-        <div class="container">
-            <div class="cta-card">
-                <h2>Ready to Join Med.Fam?</h2>
-                <p>Fill out our membership form (placeholder) to become part of a global student-led healthcare community.</p>
-                <a href="#register" class="btn btn-primary">Membership Form (placeholder)</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">We'd love to hear from you and help you get involved</p>
-            </div>
-
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                        <div class="contact-details">
-                            <h4>Email Us</h4>
-                            <p>letstalk.medfam@gmail.com</p>
-                        </div>
+                    <div class="blog-grid" id="blogGrid">
+                        <!-- Blog articles will be dynamically inserted here -->
                     </div>
 
-                    <div class="contact-item">
-                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
-                        <div class="contact-details">
-                            <h4>Call Us</h4>
-                            <p>+380 63 351 0014</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-                        <div class="contact-details">
-                            <h4>Visit Us</h4>
-                            <p>MedFam Uyo<br>uyo, Akwa Ibom (Local chapter)</p>
-                        </div>
-                    </div>
-
-                    <div class="social-row">
-                        <a href="https://www.instagram.com/med.fam_/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/company/med-fam/" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    <div class="blog-pagination" id="blogPagination">
+                        <!-- Pagination will be dynamically inserted here -->
                     </div>
                 </div>
 
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <div class="blog-sidebar">
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Popular Posts</h3>
+                        <div class="popular-posts" id="popularPosts">
+                            <!-- Popular posts will be dynamically inserted here -->
                         </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Categories</h3>
+                        <ul class="categories-list" id="categoriesList">
+                            <!-- Categories will be dynamically inserted here -->
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Newsletter</h3>
+                        <p>Stay updated with our latest articles and news.</p>
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1120,6 +861,100 @@
     </footer>
 
     <script>
+        // Sample blog data - in a real implementation, this would come from a database
+        const blogPosts = [
+            {
+                id: 1,
+                title: "10 Study Techniques Every Medical Student Should Know",
+                excerpt: "Discover proven study methods that can help you retain complex medical information more effectively.",
+                category: "Study Tips",
+                date: "2025-03-15",
+                image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                popular: true
+            },
+            {
+                id: 2,
+                title: "The Future of Telemedicine: What Medical Students Need to Know",
+                excerpt: "Exploring how telehealth is reshaping healthcare delivery and what it means for future practitioners.",
+                category: "Medical News",
+                date: "2025-03-10",
+                image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                popular: true
+            },
+            {
+                id: 3,
+                title: "My Journey from Nursing to Medical School",
+                excerpt: "A personal story of transitioning from a nursing career to pursuing a medical degree.",
+                category: "Student Stories",
+                date: "2025-03-05",
+                image: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                popular: false
+            },
+            {
+                id: 4,
+                title: "Balancing Clinical Rotations and Personal Life",
+                excerpt: "Practical tips for maintaining well-being during demanding clinical rotations.",
+                category: "Career Advice",
+                date: "2025-02-28",
+                image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                popular: true
+            },
+            {
+                id: 5,
+                title: "Understanding the Latest Advances in Cancer Research",
+                excerpt: "A breakdown of recent breakthroughs in oncology and their implications for future treatment.",
+                category: "Medical News",
+                date: "2025-02-20",
+                image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                popular: false
+            },
+            {
+                id: 6,
+                title: "How to Prepare for Medical Residency Applications",
+                excerpt: "A step-by-step guide to navigating the residency application process successfully.",
+                category: "Career Advice",
+                date: "2025-02-15",
+                image: "https://images.unsplash.com/photo-1584467735871-8db9ac8d0286?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                popular: false
+            },
+            {
+                id: 7,
+                title: "The Importance of Mental Health in Medical Training",
+                excerpt: "Why prioritizing mental wellness is crucial for medical students and how to maintain it.",
+                category: "Student Stories",
+                date: "2025-02-10",
+                image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                popular: true
+            },
+            {
+                id: 8,
+                title: "Memorization Techniques for Pharmacology",
+                excerpt: "Effective strategies to master drug names, mechanisms, and side effects.",
+                category: "Study Tips",
+                date: "2025-02-05",
+                image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                popular: false
+            },
+            {
+                id: 9,
+                title: "Global Health Initiatives: How Students Can Get Involved",
+                excerpt: "Opportunities for medical students to contribute to global health efforts.",
+                category: "Medical News",
+                date: "2025-01-28",
+                image: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                popular: false
+            },
+            {
+                id: 10,
+                title: "From Classroom to Clinic: My First Patient Encounter",
+                excerpt: "A reflective account of the transition from theoretical learning to practical patient care.",
+                category: "Student Stories",
+                date: "2025-01-20",
+                image: "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                popular: false
+            }
+        ];
+
         // Mobile menu toggle
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('nav-menu');
@@ -1147,12 +982,231 @@
             }
         });
 
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
-            this.reset();
+        // Blog functionality
+        let currentPage = 1;
+        const postsPerPage = 6;
+        let filteredPosts = [...blogPosts];
+        let currentCategory = 'All';
+
+        // Initialize blog
+        document.addEventListener('DOMContentLoaded', () => {
+            renderBlogPosts();
+            renderPopularPosts();
+            renderCategories();
+            setupEventListeners();
         });
+
+        // Render blog posts
+        function renderBlogPosts() {
+            const blogGrid = document.getElementById('blogGrid');
+            const startIndex = (currentPage - 1) * postsPerPage;
+            const endIndex = startIndex + postsPerPage;
+            const postsToShow = filteredPosts.slice(startIndex, endIndex);
+
+            blogGrid.innerHTML = '';
+
+            if (postsToShow.length === 0) {
+                blogGrid.innerHTML = '<p class="no-results">No articles found matching your criteria.</p>';
+                return;
+            }
+
+            postsToShow.forEach(post => {
+                const postElement = document.createElement('div');
+                postElement.className = 'blog-card';
+                postElement.innerHTML = `
+                    <img src="${post.image}" alt="${post.title}" class="blog-image">
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">${post.category}</span>
+                            <span>${formatDate(post.date)}</span>
+                        </div>
+                        <h3 class="blog-title">${post.title}</h3>
+                        <p class="blog-excerpt">${post.excerpt}</p>
+                        <a href="#" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                `;
+                blogGrid.appendChild(postElement);
+            });
+
+            renderPagination();
+        }
+
+        // Render popular posts
+        function renderPopularPosts() {
+            const popularPostsContainer = document.getElementById('popularPosts');
+            const popularPosts = blogPosts.filter(post => post.popular).slice(0, 5);
+
+            popularPostsContainer.innerHTML = '';
+
+            popularPosts.forEach(post => {
+                const postElement = document.createElement('div');
+                postElement.className = 'popular-post';
+                postElement.innerHTML = `
+                    <img src="${post.image}" alt="${post.title}" class="popular-post-img">
+                    <div class="popular-post-content">
+                        <h4>${post.title}</h4>
+                        <div class="popular-post-date">${formatDate(post.date)}</div>
+                    </div>
+                `;
+                popularPostsContainer.appendChild(postElement);
+            });
+        }
+
+        // Render categories
+        function renderCategories() {
+            const categoriesContainer = document.getElementById('categoriesList');
+            const categories = {};
+
+            blogPosts.forEach(post => {
+                if (categories[post.category]) {
+                    categories[post.category]++;
+                } else {
+                    categories[post.category] = 1;
+                }
+            });
+
+            categoriesContainer.innerHTML = '';
+
+            // Add "All" category
+            const allItem = document.createElement('li');
+            allItem.className = 'category-item';
+            allItem.innerHTML = `
+                <span class="category-name">All</span>
+                <span class="category-count">${blogPosts.length}</span>
+            `;
+            categoriesContainer.appendChild(allItem);
+
+            // Add other categories
+            for (const category in categories) {
+                const categoryItem = document.createElement('li');
+                categoryItem.className = 'category-item';
+                categoryItem.innerHTML = `
+                    <span class="category-name">${category}</span>
+                    <span class="category-count">${categories[category]}</span>
+                `;
+                categoriesContainer.appendChild(categoryItem);
+            }
+        }
+
+        // Render pagination
+        function renderPagination() {
+            const paginationContainer = document.getElementById('blogPagination');
+            const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+
+            paginationContainer.innerHTML = '';
+
+            if (totalPages <= 1) return;
+
+            // Previous button
+            if (currentPage > 1) {
+                const prevBtn = document.createElement('button');
+                prevBtn.className = 'pagination-btn';
+                prevBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
+                prevBtn.addEventListener('click', () => {
+                    currentPage--;
+                    renderBlogPosts();
+                });
+                paginationContainer.appendChild(prevBtn);
+            }
+
+            // Page numbers
+            for (let i = 1; i <= totalPages; i++) {
+                if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+                    const pageBtn = document.createElement('button');
+                    pageBtn.className = `pagination-btn ${i === currentPage ? 'active' : ''}`;
+                    pageBtn.textContent = i;
+                    pageBtn.addEventListener('click', () => {
+                        currentPage = i;
+                        renderBlogPosts();
+                    });
+                    paginationContainer.appendChild(pageBtn);
+                } else if (i === currentPage - 2 || i === currentPage + 2) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.className = 'pagination-ellipsis';
+                    ellipsis.textContent = '...';
+                    paginationContainer.appendChild(ellipsis);
+                }
+            }
+
+            // Next button
+            if (currentPage < totalPages) {
+                const nextBtn = document.createElement('button');
+                nextBtn.className = 'pagination-btn';
+                nextBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
+                nextBtn.addEventListener('click', () => {
+                    currentPage++;
+                    renderBlogPosts();
+                });
+                paginationContainer.appendChild(nextBtn);
+            }
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Search functionality
+            const searchInput = document.querySelector('.search-input');
+            const searchBtn = document.querySelector('.search-btn');
+
+            const performSearch = () => {
+                const searchTerm = searchInput.value.toLowerCase();
+                if (searchTerm) {
+                    filteredPosts = blogPosts.filter(post => 
+                        post.title.toLowerCase().includes(searchTerm) || 
+                        post.excerpt.toLowerCase().includes(searchTerm) ||
+                        post.category.toLowerCase().includes(searchTerm)
+                    );
+                } else {
+                    filteredPosts = [...blogPosts];
+                }
+                currentPage = 1;
+                renderBlogPosts();
+            };
+
+            searchBtn.addEventListener('click', performSearch);
+            searchInput.addEventListener('keyup', (e) => {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+
+            // Category filters
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active button
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    // Filter posts
+                    const category = btn.textContent;
+                    currentCategory = category;
+
+                    if (category === 'All') {
+                        filteredPosts = [...blogPosts];
+                    } else {
+                        filteredPosts = blogPosts.filter(post => post.category === category);
+                    }
+
+                    currentPage = 1;
+                    renderBlogPosts();
+                });
+            });
+
+            // Newsletter form
+            const newsletterForm = document.querySelector('.newsletter-form');
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = newsletterForm.querySelector('input').value;
+                alert(`Thank you for subscribing with ${email}! You'll receive our updates soon.`);
+                newsletterForm.reset();
+            });
+        }
+
+        // Format date
+        function formatDate(dateString) {
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return new Date(dateString).toLocaleDateString(undefined, options);
+        }
     </script>
 </body>
 </html>
