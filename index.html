@@ -6,7 +6,6 @@
     <meta name="google-site-verification" content="NYUpJogShlS7uO_yMWbNFh2markHQrWubxfN7gLS7L4" />
     <title>Med.Fam | Merging Medical Minds</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="ok2.jpg">
     <style>
         :root {
             --primary-brown: #8B4513;
@@ -71,12 +70,10 @@
         }
 
         .logo-img {
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
-            border-radius: 50%;
+            width: 120px;
+            height: auto;
+            object-fit: contain;
             filter: brightness(1.1) contrast(1.2);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         .nav-menu {
@@ -403,17 +400,18 @@
         }
 
         .calendar-box {
-            padding: 40px;
+            padding: 0;
             border-radius: 10px;
             border: 2px dashed var(--primary-brown);
             text-align: center;
             margin-top: 20px;
+            overflow: hidden;
         }
 
-        .calendar-box i {
-            font-size: 2.5rem;
-            color: var(--primary-brown);
-            margin-bottom: 15px;
+        .calendar-box iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
         }
 
         .past-grid {
@@ -428,6 +426,7 @@
             border-radius: 8px;
             padding: 20px;
             transition: var(--transition);
+            text-align: center;
         }
 
         .event-item:hover {
@@ -443,6 +442,8 @@
             width: 100%;
             border-radius: 8px;
             margin-bottom: 10px;
+            height: 180px;
+            object-fit: cover;
         }
 
         .small {
@@ -1087,7 +1088,7 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="ok2.jpg" alt="Med.Fam Logo" class="logo-img">
+                <img src="https://via.placeholder.com/120x60?text=MED-FAM+LOGO" alt="Med.Fam Logo" class="logo-img">
                 <span>Med.fam</span>
             </div>
             <ul class="nav-menu" id="nav-menu">
@@ -1230,38 +1231,46 @@
             <div class="events-grid">
                 <div class="calendar-card">
                     <h3>Upcoming Events Calendar</h3>
-                    <p class="section-subtitle">(Placeholder) — embed your Google Calendar here when ready</p>
                     <div class="calendar-placeholder">
                         <div class="calendar-box">
-                            <i class="far fa-calendar-alt"></i>
-                            <p>Google Calendar Embed Placeholder</p>
+                            <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FPuerto_Rico&showPrint=0&src=c3Ryb25ndXpvNTUzQGdtYWlsLmNvbQ&color=%23039be5" style="border:solid 1px #777" width="100%" height="400" frameborder="0" scrolling="no"></iframe>
                         </div>
                     </div>
 
-                    <a href="#register" class="btn btn-primary">Register for Upcoming Event</a>
+                    <a href="#register" class="btn btn-primary" style="display:inline-block; margin-top:20px;">Register for Upcoming Event</a>
                 </div>
 
                 <div class="past-events">
                     <h3>Highlights from Past Events</h3>
                     <div class="past-grid">
                         <div class="event-item">
-                            <h4>Global hand washing day</h4>
-                            <img src="photo_2025-10-16_12-11-20.jpg" alt="Hand washing demonstration 1">
-                            <img src="photo_2025-10-16_12-11-25.jpg" alt="Hand washing demonstration 2">
-                            <h4>Achieving Academic Excellence</h4>
-                            <p class="small">Short recap: Practical study strategies and interactive Q&A. (Jul 2025)</p>
+                            <h4>Back to School Wellness</h4>
+                            <img src="https://via.placeholder.com/320x200?text=Back+to+School+Event" alt="Back to School Wellness Event">
+                            <p class="small">Understanding Anxiety and the Surge of Hypertension in the Younger Generation (Oct 2024)</p>
                         </div>
 
                         <div class="event-item">
-                            <img src="https://via.placeholder.com/320x200?text=Workshop+2" alt="Workshop 2">
-                            <h4>Peer Teaching Workshop</h4>
-                            <p class="small">Short recap: Small-group sessions focused on pharmacology practice questions. (Sep 2025)</p>
+                            <h4>Be Exceptional Webinar</h4>
+                            <img src="https://via.placeholder.com/320x200?text=Be+Exceptional+Event" alt="Be Exceptional Webinar">
+                            <p class="small">Empowering students to take charge of their future (Dec 2024)</p>
                         </div>
 
                         <div class="event-item">
-                            <img src="https://via.placeholder.com/320x200?text=Panel+Talk" alt="Panel Talk">
-                            <h4>Interdisciplinary Panel</h4>
-                            <p class="small">Short recap: Discussion between medical, nursing, and public health students. (Aug 2025)</p>
+                            <h4>Global Health Issues</h4>
+                            <img src="https://via.placeholder.com/320x200?text=Global+Health+Event" alt="Global Health Issues Event">
+                            <p class="small">Discussion on healthcare worker challenges and solutions (2024)</p>
+                        </div>
+
+                        <div class="event-item">
+                            <h4>Volunteers Workshop</h4>
+                            <img src="https://via.placeholder.com/320x200?text=Volunteers+Workshop" alt="Volunteers Workshop">
+                            <p class="small">Capacity building and networking for volunteers (Aug 2025)</p>
+                        </div>
+
+                        <div class="event-item">
+                            <h4>Orphanage Outreach</h4>
+                            <img src="https://via.placeholder.com/320x200?text=Orphanage+Outreach" alt="Orphanage Outreach">
+                            <p class="small">Community service and healthcare outreach in Akwa Ibom State</p>
                         </div>
                     </div>
                 </div>
@@ -1374,13 +1383,13 @@
                 <div class="team-card">
                     <img src="https://ui-avatars.com/api/?name=Emilia+Kelvin&background=F5F5DC&color=8B4513&size=256" alt="Emilia Kelvin">
                     <h4>Emilia Kelvin</h4>
-                    <p class="muted">Co-Founder & President</p>
+                    <p class="muted">Co-Founder</p>
                 </div>
 
                 <div class="team-card">
                     <img src="https://ui-avatars.com/api/?name=Esther+Ojukwu&background=F5F5DC&color=8B4513&size=256" alt="Esther Ojukwu">
                     <h4>Esther Ojukwu</h4>
-                    <p class="muted">Co-Founder & Vice President</p>
+                    <p class="muted">Co-Founder</p>
                 </div>
             </div>
         </div>
@@ -1391,8 +1400,8 @@
         <div class="container">
             <div class="cta-card">
                 <h2>Ready to Join Med.Fam?</h2>
-                <p>Fill out our membership form (placeholder) to become part of a global student-led healthcare community.</p>
-                <a href="#register" class="btn btn-primary">Membership Form (placeholder)</a>
+                <p>Fill out our membership form to become part of a global student-led healthcare community.</p>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd-XRkRJlhoaCmiyipjDyDGieVlvnkbZc6IJE3v_mz0WeAbHw/viewform?embedded=true" width="100%" height="687" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
             </div>
         </div>
     </section>
@@ -1441,7 +1450,7 @@
                 </div>
 
                 <div class="contact-form">
-                    <form id="contactForm">
+                    <form id="contactForm" action="https://formspree.io/f/xdoqgqza" method="POST">
                         <div class="form-group">
                             <input type="text" id="name" name="name" placeholder="Your Name" required>
                         </div>
@@ -1602,13 +1611,6 @@
                 navbar.style.padding = '0';
                 navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
             }
-        });
-
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
-            this.reset();
         });
 
         // Blog functionality
