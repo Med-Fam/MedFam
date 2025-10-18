@@ -181,12 +181,16 @@ let currentCategory = 'All';
 
 async function loadBlogData() {
     try {
-        const response = await fetch('https://med-fam.github.io/MedFam/blog-data.json');
-        if (!response.ok) throw new Error('Network error');
+        console.log('Loading blog data...');
+        const response = await fetch('./blog-data.json');
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        
         blogPosts = await response.json();
+        console.log('Blog data loaded successfully:', blogPosts.length, 'posts');
+        
     } catch (error) {
         console.error('Error loading blog data:', error);
-        // Optional: Add fallback data if JSON fails
+        // Fallback to empty array
         blogPosts = [];
     }
     
