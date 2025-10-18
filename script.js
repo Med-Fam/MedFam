@@ -186,7 +186,10 @@ async function loadBlogData() {
         blogPosts = await response.json();
     } catch (error) {
         console.error('Error loading blog data:', error);
-       
+        // Optional: Add fallback data if JSON fails
+        blogPosts = [];
+    }
+    
     filteredPosts = [...blogPosts];
     initializeBlog();
 }
