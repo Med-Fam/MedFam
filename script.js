@@ -307,7 +307,7 @@ function renderBlogPosts() {
                 </div>
                 <h3 class="blog-title">${post.title}</h3>
                 <p class="blog-excerpt">${post.excerpt}</p>
-                <a href="#" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                <a href="#" class="blog-read-more" data-post-id="${post.id}">Read More <i class="fas fa-arrow-right"></i></a>
             </div>
         `;
         blogGrid.appendChild(postElement);
