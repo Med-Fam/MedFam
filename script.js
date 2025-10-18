@@ -186,17 +186,7 @@ async function loadBlogData() {
         blogPosts = await response.json();
     } catch (error) {
         console.error('Error loading blog data:', error);
-        blogPosts = [{
-            id: 1,
-            title: "Welcome to Med.Fam Blog",
-            excerpt: "Stay tuned for upcoming articles and updates from our medical community.",
-            category: "Updates",
-            date: "2025-01-01",
-            image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=500&q=80",
-            popular: true,
-            fullContent: "Welcome to the Med.Fam blog! We'll be sharing valuable insights, study tips, and stories from our medical community. Check back soon for our first articles!"
-        }];
-    }
+       
     filteredPosts = [...blogPosts];
     initializeBlog();
 }
