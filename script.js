@@ -193,7 +193,8 @@ async function loadBlogData() {
             category: "Updates",
             date: "2025-01-01",
             image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=500&q=80",
-            popular: true
+            popular: true,
+            fullContent: "Welcome to the Med.Fam blog! We'll be sharing valuable insights, study tips, and stories from our medical community. Check back soon for our first articles!"
         }];
     }
     filteredPosts = [...blogPosts];
@@ -318,6 +319,30 @@ function setupBlogEventListeners() {
             currentPage = 1;
             renderBlogPosts();
         });
+    });
+
+    // Blog post click handlers
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('blog-read-more') || 
+            e.target.parentElement.classList.contains('blog-read-more')) {
+            e.preventDefault();
+            const readMoreLink = e.target.classList.contains('blog-read-more') ? 
+                e.target : e.target.parentElement;
+            const postId = parseInt(readMoreLink.getAttribute('data-post-id'));
+            openBlogPost(postId);
+        }
+    });
+
+    // Popular posts click handlers
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.popular-post')) {
+            const popularPost = e.target.closest('.popular-post');
+            const postTitle = popularPost.querySelector('h4').textContent;
+            const post = blogPosts.find(p => p.title === postTitle);
+            if (post) {
+                openBlogPost(post.id);
+            }
+        }
     });
 
     const newsletterForm = document.querySelector('.newsletter-form');
