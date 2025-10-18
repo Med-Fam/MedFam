@@ -49,15 +49,4 @@
     "popular": false,
     "fullContent": "Global health isn't just for experienced physicians - medical students have unique opportunities to contribute meaningfully to international healthcare initiatives.\n\n## Why Get Involved Now?\nEarly exposure to global health:\n- Broadens your perspective on healthcare disparities\n- Develops cultural competency skills\n- Inspires future career directions\n- Builds valuable leadership experience\n\n## Student-Led Initiatives\n1. **Local Advocacy**: Raise awareness about global health issues in your community\n2. **Fundraising**: Organize events to support international health organizations\n3. **Research Projects**: Collaborate on global health research with faculty mentors\n4. **Educational Workshops**: Teach basic health education in underserved communities\n\n## Getting Started\n- Join student organizations focused on global health\n- Attend conferences and networking events\n- Seek mentorship from faculty with international experience\n- Consider summer internships or electives abroad\n- Start small with local global health initiatives\n\nEven without traveling internationally, you can make a significant impact through advocacy, education, and research right from your medical school."
   }
-TEMPLATE:
-{
-  "id": 6,
-  "title": "Your Blog Post Title Here",
-  "excerpt": "Brief 1-2 sentence description that appears on the blog listing page",
-  "category": "Study Tips|Medical News|Student Stories|Career Advice",
-  "date": "2025-XX-XX",
-  "image": "https://images.unsplash.com/photo-...",
-  "popular": true|false,
-  "fullContent": "Your full blog article content here. Use markdown formatting like:\n\n## Subheadings\n- Bullet points\n**Bold text** for emphasis\n\nMake sure to write comprehensive, valuable content for our medical student community."
-}
-*/
+]
