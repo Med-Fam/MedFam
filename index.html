@@ -1979,8 +1979,26 @@
             return new Date(dateString).toLocaleDateString(undefined, options);
         }
     </script>
+    <!-- Blog Post Modal -->
+<div id="blogModal" class="blog-modal">
+    <div class="blog-modal-content">
+        <button class="blog-modal-close" onclick="closeBlogPost()">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="blog-modal-header">
+            <div class="blog-modal-meta">
+                <span class="blog-modal-category" id="modalCategory"></span>
+                <span class="blog-modal-date" id="modalDate"></span>
+            </div>
+            <h1 class="blog-modal-title" id="modalTitle"></h1>
+        </div>
+        <img id="modalImage" class="blog-modal-image" alt="">
+        <div class="blog-modal-body" id="modalContent"></div>
+    </div>
+</div>
 </body>
 </html>
+
 
 
 
