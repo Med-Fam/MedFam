@@ -1,3 +1,177 @@
+// ===== MED.FAM WEBSITE JAVASCRIPT =====
+// Smooth scrolling, animations, and interactive features
+
+document.addEventListener('DOMContentLoaded', function() {
+    // ===== NAVBAR FUNCTIONALITY =====
+    const navbar = document.getElementById('navbar');
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) navbar.classList.add('scrolled');
+        else navbar.classList.remove('scrolled');
+    });
+
+    // Mobile menu toggle
+    if (hamburger) {
+        hamburger.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        hamburger.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                this.click();
+            }
+        });
+    }
+
+    // Close mobile menu when clicking on a link
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+            if (hamburger) hamburger.classList.remove('active');
+        });
+    });
+
+    // ===== SMOOTH SCROLLING =====
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (!href || href === '#') return;
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                const offsetTop = target.offsetTop - 80;
+                window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+            }
+        });
+    });
+
+    // ===== SCROLL-BASED ANIMATIONS =====
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('animated');
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.goal-card, .about-text, .about-image, .join-text, .join-cta, .contact-info, .contact-form, .stat-item, .involved-card, .team-card, .calendar-card, .event-item, .cta-card')
+        .forEach(el => {
+            el.classList.add('animate-on-scroll');
+            observer.observe(el);
+        });
+
+    // ===== SCROLL INDICATOR =====
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator) {
+        scrollIndicator.addEventListener('click', function() {
+            const aboutSection = document.getElementById('about');
+            if (aboutSection) aboutSection.scrollIntoView({ behavior: 'smooth' });
+        });
+    }
+
+    // ===== FORM HANDLING =====
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+
+            if (!name || !email || !subject || !message)
+                return showNotification('Please fill in all fields.', 'error');
+
+            if (!isValidEmail(email))
+                return showNotification('Please enter a valid email address.', 'error');
+
+            showNotification("Thank you for your message! We'll get back to you soon.", 'success');
+            this.reset();
+        });
+    }
+
+    function isValidEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function showNotification(message, type = 'info') {
+        document.querySelectorAll('.notification').forEach(n => n.remove());
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.innerHTML = `
+            <div class="notification-content">
+                <span class="notification-message">${message}</span>
+                <button class="notification-close">&times;</button>
+            </div>
+        `;
+        notification.style.cssText = `
+            position: fixed; top: 100px; right: 20px;
+            background: ${type === 'success' ? '#4CAF50' : type === 'error' ? '#f44336' : '#2196F3'};
+            color: white; padding: 1rem 1.5rem; border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 10000;
+            transform: translateX(400px); transition: transform 0.3s ease; max-width: 350px;
+        `;
+        document.body.appendChild(notification);
+        setTimeout(() => (notification.style.transform = 'translateX(0)'), 100);
+        notification.querySelector('.notification-close').addEventListener('click', () => closeNotification(notification));
+        setTimeout(() => closeNotification(notification), 5000);
+    }
+
+    function closeNotification(notification) {
+        notification.style.transform = 'translateX(400px)';
+        setTimeout(() => notification.remove(), 300);
+    }
+
+    // ===== PARALLAX EFFECT =====
+    window.addEventListener('scroll', function() {
+        const heroBackground = document.querySelector('.hero-background');
+        if (heroBackground) heroBackground.style.transform = `translateY(${window.pageYOffset * 0.5}px)`;
+    });
+
+    // ===== HOVER EFFECTS =====
+    document.querySelectorAll('.goal-card, .cta-card, .contact-item, .involved-card, .team-card').forEach(card => {
+        card.addEventListener('mouseenter', () => (card.style.transform = 'translateY(-5px) scale(1.02)'));
+        card.addEventListener('mouseleave', () => (card.style.transform = 'translateY(0) scale(1)'));
+    });
+
+    // ===== LAZY LOADING =====
+    const lazyImages = document.querySelectorAll('img[data-src]');
+    const imageObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+    lazyImages.forEach(img => imageObserver.observe(img));
+
+    // ===== ACTIVE NAV LINK HIGHLIGHT =====
+    const sections = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            if (window.pageYOffset >= section.offsetTop - 200)
+                current = section.getAttribute('id');
+        });
+        navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+        });
+    });
+
+    // ===== BLOG INITIALIZATION =====
+    loadBlogData();
+
+    console.log('Med.Fam website loaded successfully! 🩺');
+});
+
 // ===== BLOG FUNCTIONALITY =====
 let blogPosts = [];
 let currentPage = 1;
@@ -15,7 +189,7 @@ async function loadBlogData() {
         }
         
         blogPosts = await response.json();
-        console.log('Blog data loaded successfully:', blogPosts);
+        console.log('Blog data loaded successfully:', blogPosts.length, 'posts');
         
         // Initialize blog
         initializeBlog();
