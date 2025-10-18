@@ -510,3 +510,53 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add this line to initialize the blog:
     loadBlogData();
 });
+// ===== BLOG POST MODAL FUNCTIONS =====
+function openBlogPost(postId) {
+    const post = blogPosts.find(p => p.id === postId);
+    if (!post) return;
+
+    // Populate modal content
+    document.getElementById('modalCategory').textContent = post.category;
+    document.getElementById('modalDate').textContent = formatDate(post.date);
+    document.getElementById('modalTitle').textContent = post.title;
+    document.getElementById('modalImage').src = post.image;
+    document.getElementById('modalImage').alt = post.title;
+    
+    // Convert markdown-like formatting to HTML
+    const content = post.fullContent
+        .replace(/\n\n/g, '</p><p>')
+        .replace(/\n/g, '<br>')
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*(.*?)\*/g, '<em>$1</em>')
+        .replace(/## (.*?)(\n|$)/g, '<h2>$1</h2>')
+        .replace(/### (.*?)(\n|$)/g, '<h3>$1</h3>')
+        .replace(/- (.*?)(\n|$)/g, '<li>$1</li>')
+        .replace(/(<li>.*<\/li>)/g, '<ul>$1</ul>')
+        .replace(/1\. (.*?)(\n|$)/g, '<li>$1</li>')
+        .replace(/(<li>.*<\/li>)/g, '<ol>$1</ol>');
+    
+    document.getElementById('modalContent').innerHTML = `<p>${content}</p>`;
+
+    // Show modal
+    document.getElementById('blogModal').style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+function closeBlogPost() {
+    document.getElementById('blogModal').style.display = 'none';
+    document.body.style.overflow = 'auto'; // Re-enable scrolling
+}
+
+// Close modal when clicking outside content
+document.addEventListener('click', function(e) {
+    if (e.target.id === 'blogModal') {
+        closeBlogPost();
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeBlogPost();
+    }
+});
