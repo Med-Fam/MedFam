@@ -486,3 +486,180 @@ document.addEventListener('keydown', (e) => {
         closeBlogPost();
     }
 });
+// ===== WEB APP FUNCTIONALITY =====
+
+// PWA Installation
+let deferredPrompt;
+const installPrompt = document.getElementById('installPrompt');
+const installButton = document.getElementById('installButton');
+
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    installPrompt.style.display = 'flex';
+});
+
+installButton.addEventListener('click', async () => {
+    if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        if (outcome === 'accepted') {
+            installPrompt.style.display = 'none';
+        }
+        deferredPrompt = null;
+    }
+});
+
+function closeInstallPrompt() {
+    installPrompt.style.display = 'none';
+}
+
+// Service Worker Registration
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+                console.log('ServiceWorker registration successful');
+            })
+            .catch(function(err) {
+                console.log('ServiceWorker registration failed: ', err);
+            });
+    });
+}
+
+// Volunteer Dashboard Functions
+function logVolunteerHours() {
+    const hours = prompt('Enter volunteer hours:');
+    if (hours && !isNaN(hours)) {
+        const totalHours = parseInt(document.getElementById('totalHours').textContent) + parseInt(hours);
+        document.getElementById('totalHours').textContent = totalHours;
+        updateVolunteerRank(totalHours);
+        showNotification(`Successfully logged ${hours} volunteer hours!`, 'success');
+    }
+}
+
+function findOpportunities() {
+    document.getElementById('volunteer').scrollIntoView({ behavior: 'smooth' });
+}
+
+function downloadCertificate() {
+    showNotification('Volunteer certificate generation feature coming soon!', 'info');
+}
+
+function updateVolunteerRank(hours) {
+    let rank = 'New';
+    if (hours >= 100) rank = 'Gold';
+    else if (hours >= 50) rank = 'Silver';
+    else if (hours >= 25) rank = 'Bronze';
+    else if (hours >= 10) rank = 'Active';
+    
+    document.getElementById('currentRank').textContent = rank;
+    document.getElementById('pointsEarned').textContent = hours * 10;
+}
+
+// Payment Functions
+let currentTier = '';
+let currentAmount = 0;
+
+function openPaymentModal(amount, tier) {
+    currentAmount = amount;
+    currentTier = tier;
+    
+    document.getElementById('paymentDetails').innerHTML = `
+        <div style="background: var(--light-beige); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+            <h3 style="margin: 0 0 10px 0; color: var(--primary-brown);">${tier} Tier</h3>
+            <p style="margin: 0; font-size: 1.5rem; font-weight: bold; color: var(--accent-green);">$${amount}</p>
+        </div>
+    `;
+    
+    document.getElementById('paymentModal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function closePaymentModal() {
+    document.getElementById('paymentModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+document.getElementById('paymentForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    showNotification(`Thank you for your $${currentAmount} ${currentTier} sponsorship! We'll contact you shortly.`, 'success');
+    closePaymentModal();
+    this.reset();
+});
+
+// Close modals when clicking outside
+document.addEventListener('click', function(e) {
+    if (e.target.id === 'paymentModal') {
+        closePaymentModal();
+    }
+});
+
+// Load volunteer opportunities
+function loadVolunteerOpportunities() {
+    const opportunities = [
+        {
+            title: "Community Health Screening",
+            description: "Assist in blood pressure checks, BMI measurements, and health education",
+            location: "Local Community Center",
+            date: "2025-04-15",
+            duration: "4 hours",
+            spots: "8/15 available"
+        },
+        {
+            title: "Medical School Tutoring",
+            description: "Help first-year students with anatomy and physiology concepts",
+            location: "Online",
+            date: "Ongoing",
+            duration: "2 hours/week",
+            spots: "5/10 available"
+        },
+        {
+            title: "Health Fair Volunteer",
+            description: "Staff booths and provide health information at annual community health fair",
+            location: "City Park",
+            date: "2025-05-20",
+            duration: "6 hours",
+            spots: "12/20 available"
+        }
+    ];
+
+    const grid = document.getElementById('opportunitiesGrid');
+    grid.innerHTML = opportunities.map(opp => `
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <div>
+                    <h4 class="opportunity-title">${opp.title}</h4>
+                    <p>${opp.description}</p>
+                </div>
+            </div>
+            <div class="opportunity-meta">
+                <span class="meta-item"><i class="fas fa-map-marker-alt"></i> ${opp.location}</span>
+                <span class="meta-item"><i class="fas fa-calendar"></i> ${opp.date}</span>
+                <span class="meta-item"><i class="fas fa-clock"></i> ${opp.duration}</span>
+                <span class="meta-item"><i class="fas fa-users"></i> ${opp.spots}</span>
+            </div>
+            <div class="opportunity-actions">
+                <button class="btn btn-primary btn-small" onclick="signUpForOpportunity('${opp.title}')">
+                    <i class="fas fa-plus"></i> Sign Up
+                </button>
+                <button class="btn btn-secondary btn-small" onclick="viewOpportunityDetails('${opp.title}')">
+                    <i class="fas fa-info-circle"></i> Details
+                </button>
+            </div>
+        </div>
+    `).join('');
+}
+
+function signUpForOpportunity(title) {
+    showNotification(`Successfully signed up for "${title}"! We'll contact you with details.`, 'success');
+}
+
+function viewOpportunityDetails(title) {
+    showNotification(`Details for "${title}" - more information coming soon!`, 'info');
+}
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    loadVolunteerOpportunities();
+});
